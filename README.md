@@ -1,6 +1,6 @@
-# Callisto Clinic
+# Gynecomastia Website Template
 
-A responsive one-page website for **Callisto Clinic**, a gynecomastia specialist practice. The page presents the clinic's approach, treatment options, doctor profile, patient journey, results, FAQs, and booking call to action.
+A responsive one-page website template for a gynecomastia specialist practice. It presents the clinic's approach, treatment options, doctor profile, patient journey, results, FAQs, and booking call to action.
 
 ## Run locally
 
