@@ -1,0 +1,2062 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Callisto Clinic | Gynecomastia Specialist</title>
+    <meta
+      name="description"
+      content="Private, specialist gynecomastia evaluation and treatment with Dr. [Name]."
+    />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <meta property="og:title" content="Callisto Clinic" />
+    <meta property="og:image" content="assets/og-image.png" />
+    <meta name="theme-color" content="#F2F0EB" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MedicalClinic",
+        "name": "Callisto Clinic",
+        "medicalSpecialty": "PlasticSurgery",
+        "telephone": "[phone]",
+        "address": "[address]"
+      }
+    </script>
+    <style>
+      /* ===== 1. TOKENS ===== */
+      :root {
+        --chalk: #f2f0eb;
+        --paper: #faf9f6;
+        --ink: #111518;
+        --stone: #5e6b75;
+        --dust: #d9d5cc;
+        --verd: #3e7c74;
+        --serif: "Instrument Serif", Georgia, serif;
+        --sans: "Instrument Sans", system-ui, sans-serif;
+        --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        --pad: clamp(20px, 5.5vw, 80px);
+        --sec: clamp(96px, 14vw, 180px);
+      }
+      /* ===== 2. BASE ===== */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: auto;
+      }
+      html,
+      body {
+        overflow-x: clip;
+      }
+      body {
+        font: 400 clamp(16px, 1.25vw, 18px)/1.6 var(--sans);
+        background: var(--chalk);
+        color: var(--ink);
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button {
+        font: inherit;
+        color: inherit;
+        background: none;
+        border: 0;
+        cursor: pointer;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: var(--serif);
+        font-weight: 400;
+        line-height: 1;
+      }
+      :focus-visible {
+        outline: 2px solid var(--verd);
+        outline-offset: 3px;
+      }
+      .skip {
+        position: absolute;
+        left: -999px;
+      }
+      .skip:focus {
+        left: 12px;
+        top: 12px;
+        background: #fff;
+        padding: 8px;
+        z-index: 99;
+      }
+      .wrap {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 var(--pad);
+      }
+      .sec {
+        padding: var(--sec) 0;
+        position: relative;
+      }
+      .dark {
+        background: var(--ink);
+        color: var(--chalk);
+      }
+      .paper {
+        background: var(--paper);
+      }
+      .label {
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--stone);
+        font-weight: 500;
+      }
+      .dark .label {
+        color: #9aa7b0;
+      }
+      .h2 {
+        font-size: clamp(44px, 7vw, 104px);
+        letter-spacing: -0.02em;
+      }
+      .lead {
+        color: var(--stone);
+        max-width: 46ch;
+      }
+      em {
+        font-style: italic;
+        color: var(--verd);
+      }
+      .btn {
+        display: inline-block;
+        background: var(--verd);
+        color: #fff;
+        padding: 14px 26px;
+        border-radius: 4px;
+        font-weight: 500;
+        font-size: 15px;
+        transition: background 0.4s;
+      }
+      .btn:hover {
+        background: var(--ink);
+      }
+      .dark .btn:hover {
+        background: #2f6159;
+      }
+      .link {
+        font-weight: 500;
+        font-size: 15px;
+        background: linear-gradient(currentColor, currentColor) 0 100%/0 1px
+          no-repeat;
+        transition: background-size 0.4s var(--ease);
+        padding-bottom: 3px;
+      }
+      .link:hover {
+        background-size: 100% 1px;
+      }
+      .link.v {
+        color: var(--verd);
+      }
+      .two {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 24px;
+      }
+      .arch {
+        border-radius: 999px 999px 0 0;
+        overflow: hidden;
+        background: #e4e0d6;
+      }
+      svg.fill {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      /* ===== 3. HEADER ===== */
+      header {
+        position: fixed;
+        inset: 0 0 auto;
+        height: 72px;
+        z-index: 50;
+        transition:
+          transform 0.5s var(--ease),
+          background 0.4s;
+      }
+      header.solid {
+        background: rgba(242, 240, 235, 0.92);
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid var(--dust);
+      }
+      header.hide {
+        transform: translateY(-100%);
+      }
+      header .wrap {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+      .logo {
+        font: 24px var(--serif);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .logo i {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--ink);
+        box-shadow: inset -5px 0 0 var(--chalk);
+      }
+      nav.main {
+        display: flex;
+        gap: clamp(20px, 3vw, 44px);
+        font-size: 15px;
+        font-weight: 500;
+      }
+      .hd-r {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+      .burger {
+        display: none;
+        width: 44px;
+        height: 44px;
+      }
+      .burger span {
+        display: block;
+        width: 24px;
+        height: 1.5px;
+        background: var(--ink);
+        margin: 6px auto;
+      }
+      /* ===== 4. HERO ===== */
+      #hero {
+        overflow: clip;
+        min-height: 100svh;
+        display: flex;
+        align-items: center;
+        padding: 110px 0 120px;
+      }
+      #hero .two {
+        align-items: center;
+      }
+      .hero-t {
+        grid-column: 1/9;
+      }
+      .hero-t h1 {
+        font-size: clamp(48px, 8.4vw, 140px);
+        letter-spacing: -0.03em;
+        line-height: 0.95;
+      }
+      .hero-t .ln {
+        display: block;
+        overflow: hidden;
+        padding-bottom: 0.08em;
+      }
+      .hero-t .ln > span {
+        display: block;
+      }
+      .hero-t p {
+        margin: 36px 0 36px;
+        max-width: 40ch;
+        color: var(--stone);
+        font-size: clamp(17px, 1.5vw, 21px);
+      }
+      .acts {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .hero-v {
+        grid-column: 9/13;
+        position: relative;
+      }
+      .hero-v .arch {
+        aspect-ratio: 3/4;
+      }
+      .orbit {
+        position: absolute;
+        inset: -12% -22% auto auto;
+        width: 130%;
+        pointer-events: none;
+        overflow: visible;
+      }
+      .orbit circle {
+        fill: none;
+        stroke: var(--verd);
+        stroke-width: 0.4;
+        opacity: 0.7;
+      }
+      .hero-foot {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-top: 1px solid var(--dust);
+        padding: 22px 0;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--stone);
+      }
+      .hero-foot .wrap {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      /* ===== 5. EMPATHY ===== */
+      #empathy p {
+        font: clamp(34px, 6vw, 86px)/1.12 var(--serif);
+        max-width: 20ch;
+        max-width: min(100%, 1000px);
+        letter-spacing: -0.01em;
+      }
+      .w {
+        opacity: 0.2;
+      }
+      /* ===== 6. UNDERSTANDING ===== */
+      .und {
+        display: grid;
+        grid-template-columns: 5fr 6fr;
+        gap: clamp(32px, 7vw, 110px);
+        align-items: start;
+      }
+      .und-l {
+        position: sticky;
+        top: 110px;
+      }
+      .und-l .h2 {
+        font-size: clamp(40px, 5.4vw, 76px);
+        margin: 18px 0 22px;
+      }
+      .toc {
+        margin-top: 48px;
+        border-top: 1px solid var(--dust);
+        padding-top: 20px;
+        display: grid;
+        gap: 12px;
+        font-size: 15px;
+        color: var(--stone);
+      }
+      .toc a {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        transition: color 0.3s;
+      }
+      .toc a:before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--verd);
+        transform: scale(0);
+        transition: transform 0.3s;
+      }
+      .toc a.on {
+        color: var(--ink);
+        font-weight: 500;
+      }
+      .toc a.on:before {
+        transform: scale(1);
+      }
+      .chap {
+        min-height: 80vh;
+        padding: 0 0 90px;
+        margin-bottom: 90px;
+        border-bottom: 1px solid var(--dust);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 22px;
+      }
+      .chap:last-child {
+        border: 0;
+        margin: 0;
+      }
+      .chap h3 {
+        font-size: clamp(34px, 3.6vw, 52px);
+      }
+      .chap p {
+        color: var(--stone);
+      }
+      .chap ul {
+        list-style: none;
+        columns: 2;
+        gap: 28px;
+      }
+      .chap li {
+        padding: 12px 0;
+        border-bottom: 1px solid var(--dust);
+        break-inside: avoid;
+        font-size: 16px;
+      }
+      .fig {
+        max-width: 340px;
+        color: var(--ink);
+      }
+      .fig svg {
+        width: 100%;
+      }
+      .grades {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        border-top: 1px solid var(--ink);
+        margin-top: 10px;
+      }
+      .grades div {
+        padding: 18px 14px 0 0;
+        font-size: 14px;
+        color: var(--stone);
+      }
+      .grades b {
+        display: block;
+        font: 44px var(--serif);
+        color: var(--ink);
+        font-weight: 400;
+      }
+      /* ===== 7. TREATMENT ===== */
+      .tt {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 40px;
+        flex-wrap: wrap;
+        margin-bottom: 70px;
+      }
+      .row {
+        width: 100%;
+        text-align: left;
+        display: grid;
+        grid-template-columns: 5fr 4fr 40px;
+        gap: 24px;
+        align-items: center;
+        padding: 30px 0;
+        border-top: 1px solid var(--dust);
+      }
+      .row b {
+        font: 400 clamp(28px, 4.2vw, 58px)/1 var(--serif);
+        transition: transform 0.5s var(--ease);
+      }
+      .row:hover b {
+        transform: translateX(14px);
+      }
+      .row small {
+        font-size: 15px;
+        color: var(--stone);
+      }
+      .row i {
+        width: 12px;
+        height: 12px;
+        border: solid var(--ink);
+        border-width: 0 1.5px 1.5px 0;
+        transform: rotate(-45deg);
+        transition: transform 0.4s var(--ease);
+        justify-self: end;
+      }
+      .item.open .row i {
+        transform: rotate(45deg);
+      }
+      .item:last-of-type {
+        border-bottom: 1px solid var(--dust);
+      }
+      .panel {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.6s var(--ease);
+      }
+      .item.open .panel {
+        grid-template-rows: 1fr;
+      }
+      .panel > div {
+        overflow: hidden;
+      }
+      .pin {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+        padding: 6px 0 40px;
+        font-size: 15px;
+        color: var(--stone);
+      }
+      .pin h4 {
+        margin-bottom: 6px;
+      }
+      .band {
+        margin-top: 80px;
+        padding: clamp(28px, 5vw, 56px);
+        border-radius: 4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+      .band p {
+        font: clamp(26px, 3.4vw, 44px) var(--serif);
+      }
+      /* ===== 8. DOCTOR ===== */
+      .doc {
+        display: grid;
+        grid-template-columns: 5fr 6fr;
+        gap: clamp(32px, 8vw, 120px);
+        align-items: center;
+      }
+      .doc .arch {
+        aspect-ratio: 1/1;
+        position: relative;
+      }
+      .doc .arch img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 20%;
+        display: block;
+      }
+      .doc blockquote {
+        font: clamp(32px, 4.4vw, 62px)/1.08 var(--serif);
+        letter-spacing: -0.01em;
+        margin-bottom: 36px;
+      }
+      .facts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+        border-top: 1px solid var(--dust);
+        padding-top: 24px;
+        margin: 32px 0;
+        font-size: 15px;
+      }
+      /* ===== 9. JOURNEY ===== */
+      .jr {
+        display: grid;
+        grid-template-columns: 4fr 7fr;
+        gap: clamp(32px, 8vw, 120px);
+      }
+      .jr-l {
+        position: sticky;
+        top: 110px;
+        height: fit-content;
+      }
+      .jr-l .h2 {
+        font-size: clamp(40px, 5vw, 72px);
+        margin: 16px 0 40px;
+      }
+      .bar {
+        height: 200px;
+        width: 1px;
+        background: #ffffff33;
+        position: relative;
+      }
+      .bar i {
+        position: absolute;
+        inset: 0;
+        background: var(--verd);
+        transform: scaleY(0);
+        transform-origin: top;
+      }
+      .stp {
+        min-height: 72vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        opacity: 0.25;
+        transition: opacity 0.6s;
+      }
+      .stp.on {
+        opacity: 1;
+      }
+      .stp h3 {
+        font-size: clamp(34px, 4.6vw, 64px);
+        margin-bottom: 20px;
+      }
+      .stp p {
+        max-width: 44ch;
+        color: #c3cbd1;
+      }
+      .stp small {
+        margin-top: 22px;
+        color: #9aa7b0;
+      }
+      .stp:after {
+        content: attr(data-n);
+        position: absolute;
+        right: 0;
+        bottom: 6%;
+        font: clamp(90px, 16vw, 220px) var(--serif);
+        color: transparent;
+        -webkit-text-stroke: 1px #ffffff3d;
+        line-height: 1;
+        pointer-events: none;
+      }
+      /* ===== 10. RESULTS ===== */
+      .res {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 28px;
+        margin-top: 60px;
+      }
+      .cmp {
+        position: relative;
+        aspect-ratio: 4/3;
+        border: 1px solid var(--dust);
+        overflow: hidden;
+        background: #e4e0d6;
+        touch-action: pan-y;
+        user-select: none;
+      }
+      .cmp .a,
+      .cmp .b {
+        position: absolute;
+        inset: 0;
+        transition: filter 0.6s;
+      }
+      .cmp .b {
+        clip-path: inset(0 50% 0 0);
+      }
+      .cmp.blur .a,
+      .cmp.blur .b {
+        filter: blur(18px);
+      }
+      .cmp .h {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 2px;
+        background: var(--verd);
+        pointer-events: none;
+      }
+      .cmp .h:after {
+        content: "↔";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: var(--verd);
+        color: #fff;
+        display: grid;
+        place-items: center;
+      }
+      .cmp input {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        cursor: ew-resize;
+        width: 100%;
+        height: 100%;
+      }
+      .tag {
+        position: absolute;
+        top: 16px;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--stone);
+        z-index: 2;
+      }
+      .gate {
+        position: absolute;
+        inset: auto 0 0 0;
+        background: var(--chalk);
+        padding: 18px 22px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        z-index: 3;
+        font-size: 14px;
+        color: var(--stone);
+      }
+      .cmp:not(.blur) .gate {
+        display: none;
+      }
+      .thumbs {
+        display: grid;
+        gap: 14px;
+        align-content: start;
+      }
+      .thumbs button {
+        border: 1px solid var(--dust);
+        aspect-ratio: 4/3;
+        overflow: hidden;
+        opacity: 0.55;
+        transition: opacity 0.3s;
+        background: #e4e0d6;
+      }
+      .thumbs button.on,
+      .thumbs button:hover {
+        opacity: 1;
+      }
+      .flt {
+        display: flex;
+        gap: 28px;
+        flex-wrap: wrap;
+        margin-top: 34px;
+        padding-top: 26px;
+        border-top: 1px solid var(--dust);
+        font-size: 15px;
+        color: var(--stone);
+      }
+      .flt button.on {
+        color: var(--ink);
+        font-weight: 500;
+      }
+      /* ===== 11. GOOD TO KNOW ===== */
+      .gk {
+        display: grid;
+        grid-template-columns: 4fr 8fr;
+        gap: clamp(32px, 7vw, 100px);
+        margin-top: 60px;
+      }
+      .tabs {
+        display: grid;
+        gap: 4px;
+        align-content: start;
+      }
+      .tabs button {
+        text-align: left;
+        font: clamp(26px, 3vw, 40px) var(--serif);
+        padding: 12px 0 12px 22px;
+        border-left: 2px solid var(--dust);
+        color: var(--stone);
+        transition: 0.3s;
+      }
+      .tabs button.on {
+        color: var(--ink);
+        border-color: var(--verd);
+      }
+      .pane {
+        display: none;
+        animation: in 0.6s var(--ease);
+      }
+      .pane.on {
+        display: block;
+      }
+      @keyframes in {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+      }
+      .cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+      .pane h4 {
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+      .pane li {
+        margin: 0 0 10px 18px;
+        color: var(--stone);
+      }
+      .pane p {
+        color: var(--stone);
+        margin-bottom: 14px;
+      }
+      details {
+        border-top: 1px solid var(--dust);
+        padding: 18px 0;
+      }
+      details:last-child {
+        border-bottom: 1px solid var(--dust);
+      }
+      summary {
+        cursor: pointer;
+        font: clamp(20px, 2vw, 26px) var(--serif);
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+      }
+      summary::after {
+        content: "+";
+        transition: transform 0.3s;
+      }
+      details[open] summary::after {
+        transform: rotate(45deg);
+      }
+      details p {
+        margin-top: 12px;
+      }
+      /* ===== 12. BOOK / FOOTER ===== */
+      .bk {
+        display: grid;
+        grid-template-columns: 6fr 5fr;
+        gap: clamp(32px, 8vw, 120px);
+        align-items: start;
+      }
+      .bk .h2 {
+        font-size: clamp(46px, 7.6vw, 112px);
+      }
+      form {
+        background: var(--paper);
+        color: var(--ink);
+        padding: clamp(24px, 3vw, 44px);
+        border-radius: 4px;
+        display: grid;
+        gap: 22px;
+      }
+      form label {
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--stone);
+        display: grid;
+        gap: 6px;
+      }
+      form input,
+      form select {
+        font: 18px var(--sans);
+        padding: 10px 0;
+        border: 0;
+        border-bottom: 1px solid var(--dust);
+        background: none;
+        color: var(--ink);
+      }
+      form small {
+        color: var(--stone);
+        font-size: 13px;
+      }
+      .ok {
+        display: none;
+        font: 28px var(--serif);
+      }
+      .info {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+        border-top: 1px solid #ffffff33;
+        margin-top: 90px;
+        padding-top: 34px;
+        font-size: 15px;
+        color: #c3cbd1;
+      }
+      .info b {
+        display: block;
+        color: var(--chalk);
+        font-weight: 500;
+        margin-bottom: 6px;
+      }
+      footer {
+        background: var(--ink);
+        color: #9aa7b0;
+        padding: 0 0 40px;
+        font-size: 13px;
+        overflow: hidden;
+      }
+      footer .big {
+        font: clamp(80px, 22vw, 340px)/0.8 var(--serif);
+        color: #ffffff0f;
+        text-align: center;
+        margin-top: 30px;
+      }
+      footer .wrap {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+        border-top: 1px solid #ffffff22;
+        padding-top: 26px;
+      }
+      .cta-m {
+        display: none;
+      }
+      dialog {
+        border: 0;
+        border-radius: 6px;
+        padding: clamp(24px, 4vw, 48px);
+        width: min(560px, 92vw);
+        margin: auto;
+        background: var(--paper);
+      }
+      dialog::backdrop {
+        background: #111518aa;
+      }
+      dialog h3 {
+        font-size: 34px;
+        margin: 10px 0 22px;
+      }
+      dialog .o {
+        display: grid;
+        gap: 10px;
+      }
+      dialog .o button {
+        border: 1px solid var(--dust);
+        padding: 14px 16px;
+        text-align: left;
+        border-radius: 4px;
+        transition: 0.3s;
+      }
+      dialog .o button:hover {
+        border-color: var(--verd);
+        background: #fff;
+      }
+      .arch img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .fig.wide {
+        max-width: 520px;
+      }
+      .fig img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .ti {
+        width: 100%;
+        max-width: 150px;
+        height: auto;
+        border-radius: 4px;
+        border: 1px solid var(--dust);
+      }
+      .pin {
+        grid-template-columns: 150px repeat(3, 1fr) !important;
+      }
+      @media (max-width: 900px) {
+        .pin {
+          grid-template-columns: 1fr !important;
+        }
+      }
+      /* ===== 13. RESPONSIVE ===== */
+      @media (max-width: 900px) {
+        nav.main {
+          position: fixed;
+          inset: 0;
+          background: var(--ink);
+          color: var(--chalk);
+          flex-direction: column;
+          justify-content: center;
+          padding: var(--pad);
+          font: 40px var(--serif);
+          gap: 22px;
+          transform: translateY(-100%);
+          transition: transform 0.6s var(--ease);
+        }
+        nav.main.open {
+          transform: none;
+        }
+        .burger {
+          display: block;
+          position: relative;
+          z-index: 60;
+        }
+        .hd-r .link,
+        .hd-r .btn {
+          display: none;
+        }
+        .hero-t,
+        .hero-v {
+          grid-column: 1/-1;
+        }
+        .hero-v {
+          max-width: 360px;
+          margin-top: 20px;
+        }
+        .orbit {
+          display: none;
+        }
+        .und,
+        .doc,
+        .jr,
+        .gk,
+        .bk,
+        .res {
+          grid-template-columns: 1fr;
+        }
+        .und-l,
+        .jr-l {
+          position: static;
+        }
+        .chap {
+          min-height: 0;
+        }
+        .jr-l .bar {
+          display: none;
+        }
+        .stp {
+          min-height: 46vh;
+        }
+        .row {
+          grid-template-columns: 1fr 28px;
+        }
+        .row small {
+          grid-column: 1;
+        }
+        .pin,
+        .cols,
+        .info {
+          grid-template-columns: 1fr;
+        }
+        .thumbs {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .cta-m {
+          display: flex;
+          position: fixed;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 40;
+          background: var(--chalk);
+          border-top: 1px solid var(--dust);
+          padding: 10px var(--pad) calc(10px + env(safe-area-inset-bottom));
+          gap: 12px;
+        }
+        .cta-m {
+          transform: translateY(110%);
+          transition: transform 0.5s var(--ease);
+        }
+        .cta-m.show {
+          transform: none;
+        }
+        .cta-m .btn {
+          flex: 1;
+          text-align: center;
+        }
+        .cta-m a:last-child {
+          align-self: center;
+          font-weight: 500;
+          color: var(--verd);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation: none !important;
+          transition: none !important;
+        }
+        .w {
+          opacity: 1;
+        }
+        .stp {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <!-- ===== IMAGES: reusable inline SVG illustrations (replace with real photography later) ===== -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <symbol id="room" viewBox="0 0 300 400">
+          <rect width="300" height="400" fill="#E9E5DB" />
+          <path d="M0 0h300v250H0z" fill="#EFECE4" />
+          <path d="M190 0h110v250L190 250z" fill="#fff" opacity=".55" />
+          <rect
+            x="40"
+            y="70"
+            width="90"
+            height="120"
+            fill="#fff"
+            opacity=".7"
+          />
+          <path d="M85 70v120M40 130h90" stroke="#D9D5CC" stroke-width="3" />
+          <rect y="250" width="300" height="150" fill="#D8D2C5" />
+          <rect
+            x="150"
+            y="215"
+            width="130"
+            height="46"
+            rx="6"
+            fill="#3E7C74"
+            opacity=".85"
+          />
+          <rect x="150" y="262" width="130" height="10" fill="#2c5a54" />
+          <rect x="30" y="215" width="95" height="8" fill="#5E6B75" />
+          <path d="M42 223v50M113 223v50" stroke="#5E6B75" stroke-width="5" />
+          <rect x="50" y="276" width="42" height="40" rx="5" fill="#C9C2B3" />
+          <path d="M52 290v50M90 290v50" stroke="#5E6B75" stroke-width="4" />
+        </symbol>
+        <symbol id="torso" viewBox="0 0 200 240">
+          <path
+            d="M70 14c14 10 46 10 60 0 22 6 52 14 62 42l6 74-22 6-6 44-10 60H60l-10-60-6-44-22-6 6-74c10-28 40-36 62-42z"
+            fill="#EDE8DD"
+            stroke="currentColor"
+            stroke-width="1.5"
+          />
+        </symbol>
+        <symbol id="chestA" viewBox="0 0 200 240">
+          <use href="#torso" />
+          <path
+            d="M52 98c22 18 38 18 48 4m0 0c10 14 26 14 48-4"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          />
+          <circle cx="76" cy="104" r="3" fill="currentColor" />
+          <circle cx="124" cy="104" r="3" fill="currentColor" />
+        </symbol>
+        <symbol id="chestB" viewBox="0 0 200 240">
+          <use href="#torso" />
+          <path
+            d="M56 92c12 8 30 8 44 0m0 0c14 8 32 8 44 0"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          />
+        </symbol>
+        <symbol id="doc" viewBox="0 0 200 250">
+          <rect width="200" height="250" fill="#E4E0D6" />
+          <circle cx="100" cy="92" r="34" fill="#C9C2B3" />
+          <path d="M30 250c0-70 30-104 70-104s70 34 70 104z" fill="#C9C2B3" />
+        </symbol>
+      </defs>
+    </svg>
+
+    <header>
+      <div class="wrap">
+        <a class="logo" href="#hero"><i></i>Callisto</a>
+        <nav class="main" id="nav" aria-label="Main">
+          <a href="#understanding">Understanding</a
+          ><a href="#treatment">Treatment</a><a href="#doctor">Doctor</a
+          ><a href="#results">Results</a>
+        </nav>
+        <div class="hd-r">
+          <a class="link v" href="https://wa.me/910000000000">WhatsApp</a
+          ><a class="btn" href="#book">Book a consultation</a
+          ><button
+            class="burger"
+            id="bg"
+            aria-label="Menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ===== SCENE 1: HERO ===== -->
+      <section id="hero" class="sec">
+        <div class="wrap two">
+          <div class="hero-t">
+            <h1 aria-label="Your chest. Your decision. Treated with care.">
+              <span class="ln"><span>Your chest.</span></span
+              ><span class="ln"><span>Your decision.</span></span
+              ><span class="ln"
+                ><span>Treated with <em>care.</em></span></span
+              >
+            </h1>
+            <p>
+              Specialist gynecomastia evaluation and treatment with Dr. [Name].
+              Private, unhurried, judgement-free.
+            </p>
+            <div class="acts">
+              <a class="btn" href="#book">Book a private consultation</a
+              ><button class="link" data-quiz>Am I a candidate?</button>
+            </div>
+          </div>
+          <div class="hero-v">
+            <svg class="orbit" viewBox="0 0 100 100" aria-hidden="true">
+              <circle id="orb" cx="50" cy="50" r="48" />
+            </svg>
+            <div class="arch" id="heroimg">
+              <img
+                src="assets/callisto_consultation_room.svg"
+                alt="Illustration of a calm, private consultation room"
+                width="600"
+                height="800"
+                fetchpriority="high"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="hero-foot">
+          <div class="wrap">
+            <span>Specialist-led care</span><span>Fully confidential</span
+            ><span>[Registration no.]</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SCENE 2: EMPATHY ===== -->
+      <section
+        id="empathy"
+        class="sec dark"
+        style="min-height: 100svh; display: flex; align-items: center"
+      >
+        <div class="wrap">
+          <span class="label">Why Callisto exists</span>
+          <p id="emp" style="margin-top: 28px">
+            Many men carry this quietly. They skip the pool, wear a second
+            shirt, avoid the mirror. You don't have to.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===== SCENE 3: UNDERSTANDING ===== -->
+      <section id="understanding" class="sec">
+        <div class="wrap und">
+          <div class="und-l">
+            <span class="label">Understanding</span>
+            <h2 class="h2">What is gynecomastia?</h2>
+            <p class="lead">
+              An enlargement of male breast tissue. Common, usually harmless,
+              and worth understanding properly.
+            </p>
+            <nav class="toc" aria-label="Topics">
+              <a href="#c1" class="on">The condition</a><a href="#c2">Causes</a
+              ><a href="#c3">Gland or fat?</a><a href="#c4">Severity</a>
+            </nav>
+          </div>
+          <div>
+            <div class="chap" id="c1">
+              <h3>The condition</h3>
+              <p>
+                Gynecomastia is a benign enlargement of glandular tissue in one
+                or both sides of the male chest. It is not usually harmful, but
+                it can cause tenderness and often affects confidence.
+              </p>
+              <div class="fig">
+                <svg
+                  viewBox="0 0 200 240"
+                  role="img"
+                  aria-label="Outline of a male torso"
+                >
+                  <use href="#chestA" />
+                </svg>
+              </div>
+            </div>
+            <div class="chap" id="c2">
+              <h3>Causes</h3>
+              <p>
+                Usually a shift in the balance of hormones. Common triggers:
+              </p>
+              <ul>
+                <li>Puberty</li>
+                <li>Adult hormonal change</li>
+                <li>Medications</li>
+                <li>Anabolic steroids and supplements</li>
+                <li>Weight change</li>
+                <li>Underlying medical conditions</li>
+              </ul>
+              <p><em>Some causes need a medical check first.</em></p>
+            </div>
+            <div class="chap" id="c3">
+              <h3>Gland or fat?</h3>
+              <p>
+                True gynecomastia involves glandular tissue. Pseudogynecomastia
+                is fat alone. Many chests are a mix, and the difference decides
+                the treatment. Only an examination can tell.
+              </p>
+              <div class="fig wide">
+                <img
+                  src="assets/anatomy.svg"
+                  alt="Cross-section comparison: normal, fat-dominant and glandular chest"
+                  width="610"
+                  height="230"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div class="chap" id="c4">
+              <h3>Severity</h3>
+              <p>
+                Doctors often grade severity from I to IV. Only an in-person
+                exam can confirm yours.
+              </p>
+              <div class="grades">
+                <div><b>I</b>Small, localised</div>
+                <div><b>II</b>Moderate</div>
+                <div><b>III</b>Moderate, loose skin</div>
+                <div><b>IV</b>Marked, excess skin</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SCENE 4: TREATMENT ===== -->
+      <section id="treatment" class="sec paper">
+        <div class="wrap">
+          <div class="tt">
+            <h2 class="h2">Your options.</h2>
+            <p class="lead">
+              Treatment depends on the cause, the tissue and your goals. We
+              explain every option, including doing nothing.
+            </p>
+          </div>
+          <div id="list">
+            <div class="item">
+              <button class="row" aria-expanded="false">
+                <b>Medical review</b
+                ><small>Recent, mild or medication-related cases</small><i></i>
+              </button>
+              <div class="panel">
+                <div>
+                  <div class="pin">
+                    <img
+                      class="ti"
+                      src="assets/treat-1.svg"
+                      alt=""
+                      width="160"
+                      height="120"
+                      loading="lazy"
+                    />
+                    <div>
+                      <h4>What it involves</h4>
+                      Cause review, medication check, monitoring.
+                    </div>
+                    <div>
+                      <h4>Recovery</h4>
+                      No downtime. [confirm with doctor]
+                    </div>
+                    <div>
+                      <h4>Next step</h4>
+                      <a class="link v" href="#book">Discuss with Dr. [Name]</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <button class="row" aria-expanded="false">
+                <b>Liposuction</b><small>Fat-dominant chest</small><i></i>
+              </button>
+              <div class="panel">
+                <div>
+                  <div class="pin">
+                    <img
+                      class="ti"
+                      src="assets/treat-2.svg"
+                      alt=""
+                      width="160"
+                      height="120"
+                      loading="lazy"
+                    />
+                    <div>
+                      <h4>What it involves</h4>
+                      Fat removal through small incisions.
+                    </div>
+                    <div>
+                      <h4>Recovery</h4>
+                      [confirm with doctor]
+                    </div>
+                    <div>
+                      <h4>Next step</h4>
+                      <a class="link v" href="#book">Discuss with Dr. [Name]</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <button class="row" aria-expanded="false">
+                <b>Gland excision</b
+                ><small>Glandular tissue, often with liposuction</small><i></i>
+              </button>
+              <div class="panel">
+                <div>
+                  <div class="pin">
+                    <img
+                      class="ti"
+                      src="assets/treat-3.svg"
+                      alt=""
+                      width="160"
+                      height="120"
+                      loading="lazy"
+                    />
+                    <div>
+                      <h4>What it involves</h4>
+                      Removal of glandular tissue.
+                    </div>
+                    <div>
+                      <h4>Recovery</h4>
+                      Compression garment. [confirm with doctor]
+                    </div>
+                    <div>
+                      <h4>Next step</h4>
+                      <a class="link v" href="#book">Discuss with Dr. [Name]</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <button class="row" aria-expanded="false">
+                <b>Skin contouring</b
+                ><small>Loose skin after major weight loss</small><i></i>
+              </button>
+              <div class="panel">
+                <div>
+                  <div class="pin">
+                    <img
+                      class="ti"
+                      src="assets/treat-4.svg"
+                      alt=""
+                      width="160"
+                      height="120"
+                      loading="lazy"
+                    />
+                    <div>
+                      <h4>What it involves</h4>
+                      Removal of excess skin with reshaping.
+                    </div>
+                    <div>
+                      <h4>Recovery</h4>
+                      [confirm with doctor]
+                    </div>
+                    <div>
+                      <h4>Next step</h4>
+                      <a class="link v" href="#book">Discuss with Dr. [Name]</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="band dark">
+            <p>Not sure where you fit?</p>
+            <button class="btn" data-quiz>Take the 2-minute check</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SCENE 5: DOCTOR ===== -->
+      <section id="doctor" class="sec">
+        <div class="wrap doc">
+          <div class="arch">
+            <img
+              src="assets/"
+              alt="Dr. [Name] in the consultation room"
+              width="624"
+              height="444"
+              loading="lazy"
+            />
+          </div>
+          <div>
+            <span class="label">Meet Dr. [Name]</span>
+            <blockquote style="margin-top: 22px">
+              “I listen first. Then we decide, together, whether treatment is
+              even needed.”
+            </blockquote>
+            <p class="lead">
+              Dr. [Name] focuses on gynecomastia. [Short, true bio: training,
+              years in practice.]
+            </p>
+            <div class="facts">
+              <div>
+                <span class="label">Training</span>
+                <p>[Qualification], [Fellowship]</p>
+              </div>
+              <div>
+                <span class="label">Registration</span>
+                <p>[Medical council no.]</p>
+              </div>
+            </div>
+            <a class="link v" href="#book">Book with Dr. [Name] →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SCENE 6: JOURNEY ===== -->
+      <section id="journey" class="sec dark">
+        <div class="wrap jr">
+          <div class="jr-l">
+            <span class="label">The journey</span>
+            <h2 class="h2">From first message to full recovery.</h2>
+            <div class="bar"><i id="fill"></i></div>
+          </div>
+          <div id="steps">
+            <div class="stp on" data-n="01">
+              <h3>Private enquiry</h3>
+              <p>
+                Message or call. A reply from our team, privately and without
+                pressure.
+              </p>
+              <small>[Reply time]</small>
+            </div>
+            <div class="stp" data-n="02">
+              <h3>Consultation</h3>
+              <p>
+                History, examination, measurements and photographs. Hormone
+                tests where needed.
+              </p>
+            </div>
+            <div class="stp" data-n="03">
+              <h3>Your plan</h3>
+              <p>
+                Options explained in plain language, with a written, itemised
+                quote.
+              </p>
+            </div>
+            <div class="stp" data-n="04">
+              <h3>Preparation</h3>
+              <p>
+                Medication review, stopping smoking, and arranging a driver and
+                someone to stay the first night.
+              </p>
+            </div>
+            <div class="stp" data-n="05">
+              <h3>Procedure day</h3>
+              <p>
+                Your procedure, carried out as planned. [confirm with doctor]
+              </p>
+            </div>
+            <div class="stp" data-n="06">
+              <h3>Recovery</h3>
+              <p>
+                A compression garment and follow-up visits. Final results take
+                months as swelling settles. [phase timings, confirm with doctor]
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SCENE 7: RESULTS ===== -->
+      <section id="results" class="sec">
+        <div class="wrap">
+          <h2 class="h2">Real results, shown with consent.</h2>
+          <p class="lead" style="margin-top: 20px">
+            Every patient is different and results vary. We explain what is
+            realistic for you.
+          </p>
+          <div class="res">
+            <div>
+              <div class="cmp blur" id="cmp">
+                <span class="tag" style="left: 16px">Before</span
+                ><span class="tag" style="right: 16px">After</span>
+                <svg
+                  class="a fill"
+                  viewBox="0 0 200 240"
+                  preserveAspectRatio="xMidYMid slice"
+                  style="color: #5e6b75"
+                >
+                  <use href="#chestB" />
+                </svg>
+                <svg
+                  class="b fill"
+                  viewBox="0 0 200 240"
+                  preserveAspectRatio="xMidYMid slice"
+                  style="color: #5e6b75"
+                >
+                  <rect width="200" height="240" fill="#E4E0D6" />
+                  <use href="#chestA" />
+                </svg>
+                <div class="h"></div>
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="50"
+                  aria-label="Compare before and after"
+                />
+                <div class="gate">
+                  <span
+                    >Illustration only. Replace with consented patient photos.
+                    Images stay blurred until you choose.</span
+                  ><button class="btn" id="show">Show images</button>
+                </div>
+              </div>
+              <div class="flt" id="flt">
+                <button class="on">All</button><button>Grade I</button
+                ><button>Grade II</button><button>Grade III</button
+                ><button>Grade IV</button>
+              </div>
+            </div>
+            <div class="thumbs" id="th">
+              <button class="on" aria-label="Case 1">
+                <svg class="fill" viewBox="0 0 200 240" style="color: #5e6b75">
+                  <use href="#chestA" />
+                </svg></button
+              ><button aria-label="Case 2">
+                <svg class="fill" viewBox="0 0 200 240" style="color: #5e6b75">
+                  <use href="#chestB" />
+                </svg></button
+              ><button aria-label="Case 3">
+                <svg class="fill" viewBox="0 0 200 240" style="color: #5e6b75">
+                  <use href="#chestA" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SCENE 8: GOOD TO KNOW ===== -->
+      <section id="gtk" class="sec paper">
+        <div class="wrap">
+          <h2 class="h2">Good to know.</h2>
+          <div class="gk">
+            <div class="tabs" role="tablist" id="tabs">
+              <button class="on" data-p="p1">Safety &amp; risks</button
+              ><button data-p="p2">Cost &amp; insurance</button
+              ><button data-p="p3">Patient stories</button
+              ><button data-p="p4">Questions</button>
+            </div>
+            <div>
+              <div class="pane on" id="p1">
+                <div class="cols">
+                  <div>
+                    <h4>Possible risks</h4>
+                    <ul>
+                      <li>Swelling and bruising</li>
+                      <li>Asymmetry</li>
+                      <li>Change in nipple sensation</li>
+                      <li>Scarring</li>
+                      <li>Recurrence</li>
+                      <li>Infection or bleeding</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4>How we reduce them</h4>
+                    <ul>
+                      <li>Careful evaluation and planning</li>
+                      <li>Hygiene and sterile technique</li>
+                      <li>Clear aftercare</li>
+                      <li>Regular follow-up</li>
+                    </ul>
+                  </div>
+                </div>
+                <p style="margin-top: 20px">
+                  Every risk is discussed in detail at your consultation.
+                  [confirm with doctor]
+                </p>
+              </div>
+              <div class="pane" id="p2">
+                <p>
+                  Cost depends on the technique, extent of treatment,
+                  anaesthesia and facility. You receive a written quote after
+                  your consultation.
+                </p>
+                <p>
+                  Insurance usually does not cover cosmetic cases. Ask us about
+                  your policy. [confirm payment options]
+                </p>
+              </div>
+              <div class="pane" id="p3">
+                <p>
+                  [Real, consented patient stories will appear here. We never
+                  publish invented testimonials.]
+                </p>
+              </div>
+              <div class="pane" id="p4">
+                <details>
+                  <summary>Is it safe?</summary>
+                  <p>
+                    All surgery carries risk. We explain yours in detail.
+                    [confirm with doctor]
+                  </p>
+                </details>
+                <details>
+                  <summary>Will there be a scar?</summary>
+                  <p>
+                    Incisions are small and placed discreetly. [confirm with
+                    doctor]
+                  </p>
+                </details>
+                <details>
+                  <summary>When can I exercise?</summary>
+                  <p>
+                    It depends on your procedure and healing. [confirm with
+                    doctor]
+                  </p>
+                </details>
+                <details>
+                  <summary>Can it come back?</summary>
+                  <p>
+                    It can, especially with weight change or medication. We
+                    discuss this openly.
+                  </p>
+                </details>
+                <details>
+                  <summary>Will exercise or medicine fix it?</summary>
+                  <p>
+                    Sometimes, depending on the cause. That is why we start with
+                    an evaluation.
+                  </p>
+                </details>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SCENE 9: BOOK ===== -->
+      <section id="book" class="sec dark">
+        <div class="wrap">
+          <div class="bk">
+            <div>
+              <span class="label">Book a consultation</span>
+              <h2 class="h2" style="margin: 22px 0">
+                Take the first step. <em style="color: #7fb5ac">Privately.</em>
+              </h2>
+              <p class="lead" style="color: #c3cbd1">
+                Tell us a little. We reply personally. Or
+                <a class="link" href="https://wa.me/910000000000"
+                  >chat on WhatsApp</a
+                >.
+              </p>
+            </div>
+            <form id="form">
+              <label>Full name<input required autocomplete="name" /></label
+              ><label
+                >Phone<input type="tel" required autocomplete="tel" /></label
+              ><label
+                >I prefer<select>
+                  <option>In-person consultation</option>
+                  <option>Video consultation</option>
+                </select></label
+              ><button class="btn" type="submit">Request consultation</button
+              ><small
+                >Your details are confidential and used only to contact
+                you.</small
+              >
+              <p class="ok" id="ok">
+                Thank you. We will be in touch privately.
+              </p>
+            </form>
+          </div>
+          <div class="info">
+            <div>
+              <b>Clinic</b>[Address, City, State, PIN]<br />Discreet entry
+              available
+            </div>
+            <div><b>Hours</b>Mon–Fri [hours]<br />Sat [hours] · Sun closed</div>
+            <div><b>Contact</b>[+91 00000 00000]<br />[email]</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="big" aria-hidden="true">Callisto</div>
+      <div class="wrap">
+        <span>© <span id="yr"></span> Callisto Clinic · [Registration no.]</span
+        ><span
+          >Information is educational, not medical advice. Results vary.</span
+        >
+      </div>
+    </footer>
+    <div class="cta-m">
+      <a class="btn" href="#book">Book consultation</a
+      ><a href="https://wa.me/910000000000">WhatsApp</a>
+    </div>
+    <dialog id="quiz">
+      <span class="label" id="qn"></span>
+      <h3 id="qt"></h3>
+      <div class="o" id="qo"></div>
+    </dialog>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script>
+      /* ===== JS 1: helpers ===== */
+      const $ = (s, r = document) => r.querySelector(s),
+        $$ = (s, r = document) => [...r.querySelectorAll(s)];
+      const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      $("#yr").textContent = new Date().getFullYear();
+      addEventListener(
+        "scroll",
+        () => $(".cta-m").classList.toggle("show", scrollY > 500),
+        { passive: true },
+      );
+
+      /* ===== JS 2: UI that works without animation ===== */
+      const bg = $("#bg"),
+        nav = $("#nav");
+      bg.onclick = () => {
+        const o = nav.classList.toggle("open");
+        bg.setAttribute("aria-expanded", o);
+      };
+      $$("#nav a").forEach(
+        (a) => (a.onclick = () => nav.classList.remove("open")),
+      );
+      $$(".item .row").forEach(
+        (b) =>
+          (b.onclick = () => {
+            const it = b.parentElement,
+              o = !it.classList.contains("open");
+            $$(".item").forEach((i) => {
+              i.classList.remove("open");
+              $(".row", i).setAttribute("aria-expanded", false);
+            });
+            if (o) {
+              it.classList.add("open");
+              b.setAttribute("aria-expanded", true);
+            }
+          }),
+      );
+      $$("#tabs button").forEach(
+        (b) =>
+          (b.onclick = () => {
+            $$("#tabs button,.pane").forEach((e) => e.classList.remove("on"));
+            b.classList.add("on");
+            $("#" + b.dataset.p).classList.add("on");
+          }),
+      );
+      const cmp = $("#cmp"),
+        rng = $("input", cmp);
+      rng.oninput = () => {
+        $(".b", cmp).style.clipPath = `inset(0 ${100 - rng.value}% 0 0)`;
+        $(".h", cmp).style.left = rng.value + "%";
+      };
+      $("#show").onclick = () => cmp.classList.remove("blur");
+      $$("#th button").forEach(
+        (b) =>
+          (b.onclick = () => {
+            $$("#th button").forEach((x) => x.classList.remove("on"));
+            b.classList.add("on");
+          }),
+      );
+      $$("#flt button").forEach(
+        (b) =>
+          (b.onclick = () => {
+            $$("#flt button").forEach((x) => x.classList.remove("on"));
+            b.classList.add("on");
+          }),
+      );
+      $("#form").onsubmit = (e) => {
+        e.preventDefault();
+        e.target
+          .querySelectorAll("label,button,small")
+          .forEach((x) => (x.style.display = "none"));
+        $("#ok").style.display = "block";
+      };
+      /* quiz */
+      const Q = [
+        [
+          "How long have you noticed the enlargement?",
+          ["Under 6 months", "6 months – 2 years", "Over 2 years", "Not sure"],
+        ],
+        [
+          "Do you use any medication, steroids or supplements?",
+          ["Yes", "No", "Not sure"],
+        ],
+        ["Has your weight changed a lot recently?", ["Yes", "No"]],
+      ];
+      const dlg = $("#quiz");
+      let qi = 0;
+      function ask() {
+        if (qi >= Q.length) {
+          $("#qn").textContent = "Thank you";
+          $("#qt").textContent =
+            "A consultation will help you understand your options.";
+          $("#qo").innerHTML =
+            '<a class="btn" href="#book" style="text-align:center">Book a private consultation</a><small style="color:var(--stone)">This is not a diagnosis.</small>';
+          $("#qo a").onclick = () => dlg.close();
+          return;
+        }
+        $("#qn").textContent = `Question ${qi + 1} of ${Q.length}`;
+        $("#qt").textContent = Q[qi][0];
+        $("#qo").innerHTML = Q[qi][1]
+          .map((o) => `<button>${o}</button>`)
+          .join("");
+        $$("#qo button").forEach(
+          (b) =>
+            (b.onclick = () => {
+              qi++;
+              ask();
+            }),
+        );
+      }
+      $$("[data-quiz]").forEach(
+        (b) =>
+          (b.onclick = () => {
+            qi = 0;
+            ask();
+            dlg.showModal();
+          }),
+      );
+      dlg.onclick = (e) => {
+        if (e.target === dlg) dlg.close();
+      };
+
+      /* ===== JS 3: motion (skipped for reduced motion or if libraries fail) ===== */
+      if (!reduce && window.gsap && window.ScrollTrigger) {
+        gsap.registerPlugin(ScrollTrigger);
+        if (window.Lenis) {
+          const L = new Lenis({ lerp: 0.1 });
+          L.on("scroll", ScrollTrigger.update);
+          gsap.ticker.add((t) => L.raf(t * 1000));
+          gsap.ticker.lagSmoothing(0);
+          $$('a[href^="#"]').forEach((a) =>
+            a.addEventListener("click", (e) => {
+              const t = $(a.getAttribute("href"));
+              if (t && a.getAttribute("href").length > 1) {
+                e.preventDefault();
+                L.scrollTo(t, { offset: -60 });
+              }
+            }),
+          );
+        }
+        const ease = "expo.out";
+        /* hero intro */
+        const tl = gsap.timeline({ defaults: { ease } });
+        tl.from(".hero-t .ln>span", {
+          yPercent: 110,
+          duration: 1.2,
+          stagger: 0.12,
+        })
+          .from(
+            ".hero-t p,.acts",
+            { y: 24, opacity: 0, duration: 1, stagger: 0.1 },
+            "-=.8",
+          )
+          .from(
+            "#heroimg",
+            { clipPath: "inset(100% 0 0 0)", duration: 1.4 },
+            "-=1.2",
+          )
+          .from("#heroimg img", { scale: 1.15, duration: 1.6 }, "<")
+          .from(".hero-foot", { opacity: 0, duration: 1 }, "-=.6");
+        const o = $("#orb"),
+          len = 2 * Math.PI * 48;
+        gsap.fromTo(
+          o,
+          { strokeDasharray: len, strokeDashoffset: len },
+          { strokeDashoffset: 0, duration: 2, ease: "power2.out", delay: 0.6 },
+        );
+        gsap.to("#heroimg img", {
+          yPercent: 8,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "#hero",
+            scrub: true,
+            start: "top top",
+            end: "bottom top",
+          },
+        });
+        /* header */
+        const hd = $("header");
+        let ly = 0;
+        ScrollTrigger.create({
+          start: 0,
+          end: "max",
+          onUpdate: (s) => {
+            const y = s.scroll();
+            hd.classList.toggle("solid", y > 60);
+            hd.classList.toggle("hide", y > ly && y > 300);
+            ly = y;
+          },
+        });
+        /* empathy: words light up with scroll */
+        const em = $("#emp");
+        em.innerHTML = em.textContent
+          .split(" ")
+          .map((w) => `<span class="w">${w}</span>`)
+          .join(" ");
+        gsap.to(".w", {
+          opacity: 1,
+          stagger: 0.1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "#empathy",
+            start: "top 65%",
+            end: "top 5%",
+            scrub: 0.5,
+          },
+        });
+        /* active item = the one nearest the reading line (robust to fast jumps) */
+        const pick = (els, fn) =>
+          ScrollTrigger.create({
+            trigger: els[0].parentElement,
+            start: "top bottom",
+            end: "bottom top",
+            onUpdate: () => {
+              let best = 0,
+                bd = 1e9;
+              els.forEach((e, i) => {
+                const r = e.getBoundingClientRect(),
+                  d = Math.abs((r.top + r.bottom) / 2 - innerHeight * 0.5);
+                if (d < bd) {
+                  bd = d;
+                  best = i;
+                }
+              });
+              fn(best);
+            },
+          });
+        const chs = $$(".chap");
+        pick(chs, (i) =>
+          $$(".toc a").forEach((a) =>
+            a.classList.toggle("on", a.hash === "#" + chs[i].id),
+          ),
+        );
+        /* generic reveals, once */
+        gsap.utils
+          .toArray(
+            ".h2,.chap>*,.row,.doc blockquote,.band,.res>*,.gk>*,.info>*",
+          )
+          .forEach((el) =>
+            gsap.from(el, {
+              y: 28,
+              opacity: 0,
+              duration: 1,
+              ease,
+              scrollTrigger: { trigger: el, start: "top 90%", once: true },
+            }),
+          );
+        gsap.from(".doc .arch", {
+          clipPath: "inset(100% 0 0 0)",
+          duration: 1.4,
+          ease,
+          scrollTrigger: { trigger: ".doc", start: "top 75%", once: true },
+        });
+        /* journey */
+        const sts = $$(".stp");
+        pick(sts, (i) =>
+          sts.forEach((y, j) => y.classList.toggle("on", j === i)),
+        );
+        gsap.to("#fill", {
+          scaleY: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "#steps",
+            start: "top 60%",
+            end: "bottom 60%",
+            scrub: true,
+          },
+        });
+        /* desktop-only magnetic primary button */
+        if (matchMedia("(hover:hover)").matches) {
+          const b = $(".acts .btn");
+          b.addEventListener("mousemove", (e) => {
+            const r = b.getBoundingClientRect();
+            gsap.to(b, {
+              x: (e.clientX - r.left - r.width / 2) * 0.15,
+              y: (e.clientY - r.top - r.height / 2) * 0.25,
+              duration: 0.4,
+            });
+          });
+          b.addEventListener("mouseleave", () =>
+            gsap.to(b, {
+              x: 0,
+              y: 0,
+              duration: 0.6,
+              ease: "elastic.out(1,.5)",
+            }),
+          );
+        }
+      }
+    </script>
+  </body>
+</html>
